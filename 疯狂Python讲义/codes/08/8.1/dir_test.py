@@ -3,7 +3,7 @@ class Item:
         self.name = name
         self.price = price
 
-    def info():
+    def info(self):
         pass
 
 
