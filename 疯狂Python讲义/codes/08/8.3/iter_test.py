@@ -28,6 +28,7 @@ print(next(fibs))
 # 使用for循环遍历迭代器
 for el in fibs:
     print(el, end=' ')
+print('')
 # 将列表转换为迭代器
 my_iter = iter([2, 'fkit', 4])
 # 依次获取迭代器的下一个元素
