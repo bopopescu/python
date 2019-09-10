@@ -33,8 +33,8 @@ class StringSeq:
         if key in self.__deleted:
             return None
         # 否则根据计算规则返回序列元素
-        three = key
-        two = (key - three * 26 * 26)
+        three = key // (26 * 26)
+        two = (key - three * 26 * 26) // 26
         one = key % 26
         return chr(65 + three) + chr(65 + two) + chr(65 + one)
 
