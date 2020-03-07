@@ -1,0 +1,16 @@
+import unittest
+
+from hello import *
+
+
+class TestHello(unittest.TestCase):
+    # 测试 say_hello 函数
+    def test_say_hello(self):
+        self.assertEqual(say_hello(), "Hello World.")
+
+    # 测试 add 函数
+    def test_add(self):
+        self.skipTest('临时跳过 test_add')
+        self.assertEqual(add(3, 4), 7)
+        self.assertEqual(add(0, 4), 4)
+        self.assertEqual(add(-3, 0), -3)

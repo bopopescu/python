@@ -1,0 +1,51 @@
+test_add (test_hello.TestHello) ... ok
+test_say_hello (test_hello.TestHello) ... ok
+test_one_equation (test_fk_math.TestFkMath) ... FAIL
+test_two_equation (test_fk_math.TestFkMath) ... ok
+
+======================================================================
+FAIL: test_one_equation (test_fk_math.TestFkMath)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Develop\Project\python\fkit\·è¿ñPython½²Òå\codes\16\16.5\test_fk_math.py", line 10, in test_one_equation
+    self.assertEqual(one_equation(5, 9), -1.8)
+AssertionError: 1.8 != -1.8
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.002s
+
+FAILED (failures=1)
+test_add (test_hello.TestHello) ... ok
+test_say_hello (test_hello.TestHello) ... ok
+test_one_equation (test_fk_math.TestFkMath) ... FAIL
+test_two_equation (test_fk_math.TestFkMath) ... ok
+
+======================================================================
+FAIL: test_one_equation (test_fk_math.TestFkMath)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Develop\Project\python\fkit\·è¿ñPython½²Òå\codes\16\16.5\test_fk_math.py", line 10, in test_one_equation
+    self.assertEqual(one_equation(5, 9), -1.8)
+AssertionError: 1.8 != -1.8
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.002s
+
+FAILED (failures=1)
+test_add (test_hello.TestHello) ... ok
+test_say_hello (test_hello.TestHello) ... ok
+test_one_equation (test_fk_math.TestFkMath) ... FAIL
+test_two_equation (test_fk_math.TestFkMath) ... ok
+
+======================================================================
+FAIL: test_one_equation (test_fk_math.TestFkMath)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Develop\Project\python\fkit\·è¿ñPython½²Òå\codes\16\16.5\test_fk_math.py", line 10, in test_one_equation
+    self.assertEqual(one_equation(5, 9), -1.8)
+AssertionError: 1.8 != -1.8
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (failures=1)
