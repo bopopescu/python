@@ -4,13 +4,13 @@ from tkinter import ttk
 
 
 class App:
-    def __init__(self, master):
-        self.master = master
+    def __init__(self, main):
+        self.main = main
         self.initWidgets()
 
     def initWidgets(self):
         # 创建 Labelframe 容器
-        lf = ttk.Labelframe(self.master, text='请选择图书',
+        lf = ttk.Labelframe(self.main, text='请选择图书',
                             padding=20)
         lf.pack(fill=BOTH, expand=YES, padx=10, pady=10)
         books = ['Swift', 'Python', 'Kotlin', 'Ruby']

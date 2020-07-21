@@ -4,14 +4,14 @@ from tkinter import ttk
 
 
 class App:
-    def __init__(self, master):
-        self.master = master
+    def __init__(self, main):
+        self.main = main
         self.initWidgets()
 
     def initWidgets(self):
         # 定义变量
         self.doubleVar = DoubleVar()
-        self.scale = Scale(self.master,
+        self.scale = Scale(self.main,
                            from_=-100,  # 设置最大值
                            to=100,  # 设置最小值
                            resolution=5,  # 设置步长

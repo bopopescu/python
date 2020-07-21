@@ -4,8 +4,8 @@ from tkinter import ttk
 
 
 class App:
-    def __init__(self, master):
-        self.master = master
+    def __init__(self, main):
+        self.main = main
         self.initWidgets()
 
     def initWidgets(self):
@@ -24,7 +24,7 @@ class App:
                                  command=self.print_option)  # 绑定事件处理方法
         self.om.pack()
         # 创建 Labelframe 容器
-        lf = ttk.Labelframe(self.master, padding=20, text='请选择菜单方向')
+        lf = ttk.Labelframe(self.main, padding=20, text='请选择菜单方向')
         lf.pack(fill=BOTH, expand=YES, padx=10, pady=10)
         # 定义代表 Labelframe 的标签位置的 12 个常量
         self.directions = ['below', 'above', 'left', 'right', 'flush']

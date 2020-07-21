@@ -3,14 +3,14 @@ from tkinter import *
 
 
 class App:
-    def __init__(self, master):
-        self.master = master
+    def __init__(self, main):
+        self.main = main
         self.initWidgets()
 
     def initWidgets(self):
-        self.show = Label(self.master, width=30, bg='white', font=('times', 20))
+        self.show = Label(self.main, width=30, bg='white', font=('times', 20))
         self.show.pack()
-        bn = Button(self.master, text='单击我或双击我')
+        bn = Button(self.main, text='单击我或双击我')
         bn.pack(fill=BOTH, expand=YES)
         # 为左键单击事件绑定处理方法
         bn.bind('<Button-1>', self.one)

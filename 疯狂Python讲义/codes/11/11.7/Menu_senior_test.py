@@ -5,8 +5,8 @@ from collections import OrderedDict
 
 
 class App:
-    def __init__(self, master):
-        self.master = master
+    def __init__(self, main):
+        self.main = main
         self.initWidgets()
 
     def initWidgets(self):
@@ -18,7 +18,7 @@ class App:
         self.init_toolbar()
         # ------------------------------
         # 创建、添加左边的 Frame 容器
-        leftframe = ttk.Frame(self.master, width=40)
+        leftframe = ttk.Frame(self.main, width=40)
         leftframe.pack(side=LEFT, fill=Y)
         # 在左边窗口放一个 Listbox
         lb = Listbox(leftframe, font=('Courier New', 20))
@@ -26,7 +26,7 @@ class App:
         for s in ('Python', 'Ruby', 'Swift', 'Kotlin', 'Java'):
             lb.insert(END, s)
         # 创建、添加右边的 Frame 容器
-        mainframe = ttk.Frame(self.master)
+        mainframe = ttk.Frame(self.main)
         mainframe.pack(side=LEFT, fill=BOTH)
         text = Text(mainframe, width=40, font=('Courier New', 16))
         text.pack(side=LEFT, fill=BOTH)
@@ -45,12 +45,12 @@ class App:
         items = (OrderedDict([
             # 每项对应一个菜单项，后面元组的第一个元素是菜单图标
             # 第二个元素是菜单对应的事件处理函数
-            ('新建', (self.master.filenew_icon, None)),
-            ('打开', (self.master.fileopen_icon, None)),
-            ('保存', (self.master.save_icon, None)),
-            ('保存为...', (self.master.saves_icon, None)),
+            ('新建', (self.main.filenew_icon, None)),
+            ('打开', (self.main.fileopen_icon, None)),
+            ('保存', (self.main.save_icon, None)),
+            ('保存为...', (self.main.saves_icon, None)),
             ('-1', (None, None)),
-            ('退出', (self.master.signout_icon, None))
+            ('退出', (self.main.signout_icon, None))
         ]),
                  OrderedDict([('撤销', (None, None)),
                               ('重做', (None, None)),
@@ -73,9 +73,9 @@ class App:
                               ('关于', (None, None))
                               ]))
         # 使用 Menu 创建菜单条
-        menubar = Menu(self.master)
+        menubar = Menu(self.main)
         # 为窗口配置菜单条，也就是添加菜单条
-        self.master['menu'] = menubar
+        self.main['menu'] = menubar
         # 遍历 menus 元组
         for i, m_title in enumerate(menus):
             # 创建菜单
@@ -112,25 +112,25 @@ class App:
 
     # 生成所有需要的图标
     def init_icons(self):
-        self.master.filenew_icon = PhotoImage(file='images/filenew.png')
-        self.master.fileopen_icon = PhotoImage(file='images/fileopen.png')
-        self.master.save_icon = PhotoImage(file='images/save.png')
-        self.master.saves_icon = PhotoImage(file='images/saveas.png')
-        self.master.signout_icon = PhotoImage(file='images/signout.png')
+        self.main.filenew_icon = PhotoImage(file='images/filenew.png')
+        self.main.fileopen_icon = PhotoImage(file='images/fileopen.png')
+        self.main.save_icon = PhotoImage(file='images/save.png')
+        self.main.saves_icon = PhotoImage(file='images/saveas.png')
+        self.main.signout_icon = PhotoImage(file='images/signout.png')
 
     # 生成工具条
     def init_toolbar(self):
         # 创建并添加一个 Frame 作为工具条的容器
-        toolframe = Frame(self.master, height=20, bg='lightgray')
+        toolframe = Frame(self.main, height=20, bg='lightgray')
         toolframe.pack(fill=X)  # 将该 Frame 容器放在窗口顶部
         # 再次创建并添加一个 Frame 作为工具按钮的容器
         frame = ttk.Frame(toolframe)
         frame.pack(side=LEFT)  # 将该 Frame 容器放在菜单项左边
-        # 遍历 self.master 的全部数据，根据系统图标来创建工具条按钮
-        for i, e in enumerate(dir(self.master)):
+        # 遍历 self.main 的全部数据，根据系统图标来创建工具条按钮
+        for i, e in enumerate(dir(self.main)):
             # 只处理属性名以 _icon 结尾的属性（这些属性都是图标）
             if e.endswith('_icon'):
-                ttk.Button(frame, width=20, image=getattr(self.master, e),
+                ttk.Button(frame, width=20, image=getattr(self.main, e),
                            command=None).grid(row=0, column=i, padx=1, pady=1, sticky=E)
 
 

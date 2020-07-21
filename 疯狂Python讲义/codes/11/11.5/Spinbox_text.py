@@ -4,27 +4,27 @@ from tkinter import ttk
 
 
 class App:
-    def __init__(self, master):
-        self.master = master
+    def __init__(self, main):
+        self.main = main
         self.initWidgets()
 
     def initWidgets(self):
-        ttk.Label(self.master, text='指定 from、to、increament').pack()
+        ttk.Label(self.main, text='指定 from、to、increament').pack()
         # 通过指定 from_、to、increment 选项创建 Spinbox
-        sb1 = Spinbox(self.master, from_=20,
+        sb1 = Spinbox(self.main, from_=20,
                       to=100,
                       increment=5)
         sb1.pack(fill=X, expand=YES)
-        ttk.Label(self.master, text='指定 values').pack()
+        ttk.Label(self.main, text='指定 values').pack()
         # 通过指定 values 选项创建 Spinbox
-        self.sb2 = Spinbox(self.master,
+        self.sb2 = Spinbox(self.main,
                            values=('Python', 'Swift', 'Kotlin', 'Ruby'),
                            command=self.press)  # 通过 command 绑定事件处理方法
         self.sb2.pack(fill=X, expand=YES)
-        ttk.Label(self.master, text='绑定变量').pack()
+        ttk.Label(self.main, text='绑定变量').pack()
         self.intVar = IntVar()
         # 通过指定 values 选项创建 Spinbox，并为之绑定变量
-        sb3 = Spinbox(self.master,
+        sb3 = Spinbox(self.main,
                       values=list(range(20, 100, 4)),
                       textvariable=self.intVar,  # 绑定变量
                       command=self.press)

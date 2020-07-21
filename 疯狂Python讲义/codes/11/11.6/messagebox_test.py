@@ -6,13 +6,13 @@ from tkinter import messagebox as msgbox
 
 
 class App:
-    def __init__(self, master):
-        self.master = master
+    def __init__(self, main):
+        self.main = main
         self.initWidgets()
 
     def initWidgets(self):
         # ----------创建第一个 Labelframe，用于选择图标类型----------
-        topF = Frame(self.master)
+        topF = Frame(self.main)
         topF.pack(fill=BOTH)
         lf1 = ttk.Labelframe(topF, text='请选择图标类型')
         lf1.pack(side=LEFT, fill=BOTH, expand=YES, padx=10, pady=5)
@@ -42,7 +42,7 @@ class App:
             i += 1
         self.typeVar.set(0)
         # ----------创建 Frame，用于包含多个按钮来生成不同的消息框----------
-        bottomF = Frame(self.master)
+        bottomF = Frame(self.main)
         bottomF.pack(fill=BOTH)
         # 创建 8 个按钮，并为之绑定事件处理函数
         btn1 = ttk.Button(bottomF, text='showinfo',

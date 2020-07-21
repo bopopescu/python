@@ -6,8 +6,8 @@ from tkinter import *
 
 # 定义继承 Frame 的 Application 类
 class Application(Frame):
-    def __init__(self, master=None):
-        Frame.__init__(self, master)
+    def __init__(self, main=None):
+        Frame.__init__(self, main)
         self.pack()
         # 调用 initWidgets() 方法初始化界面
         self.initWidgets()
@@ -31,9 +31,9 @@ class Application(Frame):
 
 # 创建 Application 对象
 app = Application()
-# Frame 有一个默认的 master 属性，该属性值是 Tk 对象（窗口）
-print(type(app.master))
-# 通过 master 属性来设置窗口标题
-app.master.title('窗口标题')
+# Frame 有一个默认的 main 属性，该属性值是 Tk 对象（窗口）
+print(type(app.main))
+# 通过 main 属性来设置窗口标题
+app.main.title('窗口标题')
 # 启动主窗口的消息循环
 app.mainloop()

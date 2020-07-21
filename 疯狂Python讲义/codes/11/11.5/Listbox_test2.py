@@ -4,12 +4,12 @@ from tkinter import ttk
 
 
 class App:
-    def __init__(self, master):
-        self.master = master
+    def __init__(self, main):
+        self.main = main
         self.initWidgets()
 
     def initWidgets(self):
-        topF = Frame(self.master)
+        topF = Frame(self.main)
         topF.pack(fill=Y, expand=YES)
         # 定义 StringVar 变量
         self.v = StringVar()
@@ -23,7 +23,7 @@ class App:
         scroll.pack(side=RIGHT, fill=Y)
         # 设置 self.lb 的垂直滚动影响 scroll 滚动条
         self.lb.configure(yscrollcommand=scroll.set)
-        f = Frame(self.master)
+        f = Frame(self.main)
         f.pack()
         Button(f, text='选中 10 项', command=self.select).pack(side=LEFT)
         Button(f, text='清除选中 3 项', command=self.clear_select).pack(side=LEFT)

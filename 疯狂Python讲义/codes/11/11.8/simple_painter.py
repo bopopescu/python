@@ -5,8 +5,8 @@ from tkinter import colorchooser
 
 
 class App:
-    def __init__(self, master):
-        self.master = master
+    def __init__(self, main):
+        self.main = main
         # 保存设置初始的边框宽度
         self.width = IntVar()
         self.width.set(1)
@@ -38,7 +38,7 @@ class App:
         self.cv.bind('<ButtonRelease-1>', self.release_handler)
         # 为鼠标左键双击事件绑定处理函数
         self.cv.bind('<Double-1>', self.double_handler)
-        f = ttk.Frame(self.master)
+        f = ttk.Frame(self.main)
         f.pack(fill=X)
         self.bns = []
         # 采用循环创建多个按钮，用于绘制不同的图形
@@ -78,7 +78,7 @@ class App:
     # 处理选择边框颜色的方法
     def choose_outline(self):
         # 弹出颜色选择对话框
-        select_color = colorchooser.askcolor(parent=self.master,
+        select_color = colorchooser.askcolor(parent=self.main,
                                              title="请选择边框颜色", color=self.outline)
         if select_color is not None:
             self.outline = select_color[1]
@@ -86,7 +86,7 @@ class App:
     # 处理选择填充颜色的方法
     def choose_fill(self):
         # 弹出颜色选择对话框
-        select_color = colorchooser.askcolor(parent=self.master,
+        select_color = colorchooser.askcolor(parent=self.main,
                                              title="请选择填充颜色", color=self.fill)
         if select_color is not None:
             self.fill = select_color[1]

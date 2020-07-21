@@ -6,19 +6,19 @@ from tkinter import simpledialog
 
 
 class App:
-    def __init__(self, master):
-        self.master = master
+    def __init__(self, main):
+        self.main = main
         self.initWidgets()
 
     def initWidgets(self):
         # 创建三个按钮，并为之绑定事件处理方法
-        ttk.Button(self.master, text='输入整数对话框',
+        ttk.Button(self.main, text='输入整数对话框',
                    command=self.open_integer  # 绑定 open_integer 方法
                    ).pack(side=LEFT, ipadx=5, ipady=5, padx=10)
-        ttk.Button(self.master, text='输入浮点数对话框',
+        ttk.Button(self.main, text='输入浮点数对话框',
                    command=self.open_float  # 绑定 open_float 方法
                    ).pack(side=LEFT, ipadx=5, ipady=5, padx=10)
-        ttk.Button(self.master, text='输入字符串对话框',
+        ttk.Button(self.main, text='输入字符串对话框',
                    command=self.open_string  # 绑定 open_string 方法
                    ).pack(side=LEFT, ipadx=5, ipady=5, padx=10)
 

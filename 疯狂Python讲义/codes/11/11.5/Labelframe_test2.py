@@ -4,13 +4,13 @@ from tkinter import ttk
 
 
 class App:
-    def __init__(self, master):
-        self.master = master
+    def __init__(self, main):
+        self.main = main
         self.initWidgets()
 
     def initWidgets(self):
         # 创建 Labelframe 容器
-        self.lf = ttk.Labelframe(self.master, padding=20)
+        self.lf = ttk.Labelframe(self.main, padding=20)
         self.lf.pack(fill=BOTH, expand=YES, padx=10, pady=10)
         # 创建一个显示图片的 Label
         bm = PhotoImage(file='images/z.png')

@@ -6,16 +6,16 @@ import random
 
 
 class App:
-    def __init__(self, master):
-        self.master = master
+    def __init__(self, main):
+        self.main = main
         self.initWidgets()
 
     def initWidgets(self):
-        self.label = Label(self.master, width=30)
+        self.label = Label(self.main, width=30)
         self.label['font'] = ('Courier', 20)
         self.label['bg'] = 'white'
         self.label.pack()
-        bn = Button(self.master, text='单击我', command=self.change)
+        bn = Button(self.main, text='单击我', command=self.change)
         bn.pack()
 
     # 定义事件处理方法

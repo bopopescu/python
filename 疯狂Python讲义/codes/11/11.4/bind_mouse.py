@@ -3,19 +3,19 @@ from tkinter import *
 
 
 class App:
-    def __init__(self, master):
-        self.master = master
+    def __init__(self, main):
+        self.main = main
         self.initWidgets()
 
     def initWidgets(self):
-        lb = Label(self.master, width=40, height=3)
+        lb = Label(self.main, width=40, height=3)
         lb.config(bg='lightgreen', font=('Times', 20))
         # 为鼠标移动事件绑定事件处理方法
         lb.bind('<Motion>', self.motin)
         # 为按住左键时的鼠标移动事件绑定事件处理方法
         lb.bind('<B1-Motion>', self.press_motion)
         lb.pack()
-        self.show = Label(self.master, width=38, height=1)
+        self.show = Label(self.main, width=38, height=1)
         self.show.config(bg='white', font=('Courier New', 20))
         self.show.pack()
 

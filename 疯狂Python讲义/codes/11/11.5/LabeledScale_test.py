@@ -4,12 +4,12 @@ from tkinter import ttk
 
 
 class App:
-    def __init__(self, master):
-        self.master = master
+    def __init__(self, main):
+        self.main = main
         self.initWidgets()
 
     def initWidgets(self):
-        self.scale = ttk.LabeledScale(self.master,
+        self.scale = ttk.LabeledScale(self.main,
                                       from_=-100,  # 设置最大值
                                       to=100,  # 设置最小值
                                       # compound=BOTTOM  # 设置显示数字的标签在下方

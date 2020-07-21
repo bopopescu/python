@@ -5,12 +5,12 @@ from tkinter import messagebox
 
 
 class App:
-    def __init__(self, master):
-        self.master = master
+    def __init__(self, main):
+        self.main = main
         self.initWidgets()
 
     def initWidgets(self):
-        topF = Frame(self.master)
+        topF = Frame(self.main)
         topF.pack(fill=Y, expand=YES)
         # 创建 Listbox 组件
         self.lb = Listbox(topF)

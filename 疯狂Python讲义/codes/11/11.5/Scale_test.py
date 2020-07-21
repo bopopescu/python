@@ -4,12 +4,12 @@ from tkinter import ttk
 
 
 class App:
-    def __init__(self, master):
-        self.master = master
+    def __init__(self, main):
+        self.main = main
         self.initWidgets()
 
     def initWidgets(self):
-        self.scale = Scale(self.master,
+        self.scale = Scale(self.main,
                            from_=-100,  # 设置最大值
                            to=100,  # 设置最小值
                            resolution=5,  # 设置步长
@@ -24,7 +24,7 @@ class App:
                            )
         self.scale.pack()
         # 创建一个 Frame 作为容器
-        f = Frame(self.master)
+        f = Frame(self.main)
         f.pack(fill=X, expand=YES, padx=10)
         Label(f, text='是否显示值：').pack(side=LEFT)
         i = 0
@@ -36,7 +36,7 @@ class App:
                         command=self.switch_show).pack(side=LEFT)
             i += 1
         # 创建一个 Frame 作为容器
-        f = Frame(self.master)
+        f = Frame(self.main)
         f.pack(fill=X, expand=YES, padx=10)
         Label(f, text='方向：').pack(side=LEFT)
         i = 0

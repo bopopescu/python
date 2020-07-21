@@ -5,12 +5,12 @@ from collections import OrderedDict
 
 
 class App:
-    def __init__(self, master):
-        self.master = master
+    def __init__(self, main):
+        self.main = main
         self.initWidgets()
 
     def initWidgets(self):
-        self.text = Text(self.master, height=12, width=60,
+        self.text = Text(self.main, height=12, width=60,
                          foreground='darkgray',
                          font=('微软雅黑', 12),
                          spacing2=8,  # 设置行间距
@@ -23,7 +23,7 @@ class App:
         # 为 Text 组件的右键单击事件绑定处理函数
         self.text.bind('<Button-3>', self.popup)
         # 创建 Menu 对象，准备作为右键菜单
-        self.popup_menu = Menu(self.master, tearoff=0)
+        self.popup_menu = Menu(self.main, tearoff=0)
         self.my_items = (OrderedDict([('超大', 16), ('大', 14), ('中', 12),
                                       ('小', 10), ('超小', 8)]),
                          OrderedDict([('红色', 'red'), ('绿色', 'green'), ('蓝色', 'blue')]))

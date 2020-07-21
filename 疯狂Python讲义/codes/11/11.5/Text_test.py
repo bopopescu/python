@@ -4,13 +4,13 @@ from tkinter import ttk
 
 
 class App:
-    def __init__(self, master):
-        self.master = master
+    def __init__(self, main):
+        self.main = main
         self.initWidgets()
 
     def initWidgets(self):
         # 创建第一个 Text 组件
-        text1 = Text(self.master, height=27, width=32)
+        text1 = Text(self.main, height=27, width=32)
         # 创建图片
         book = PhotoImage(file='images/java.png')
         text1.bm = book
@@ -19,11 +19,11 @@ class App:
         text1.image_create(END, image=book)
         text1.pack(side=LEFT, fill=BOTH, expand=YES)
         # 创建第二个 Text 组件
-        text2 = Text(self.master, height=33, width=50)
+        text2 = Text(self.main, height=33, width=50)
         text2.pack(side=LEFT, fill=BOTH, expand=YES)
         self.text = text2
         # 创建 Scrollbar 组件，设置该组件与 text2 的垂直滚动关联
-        scroll = Scrollbar(self.master, command=text2.yview)
+        scroll = Scrollbar(self.main, command=text2.yview)
         scroll.pack(side=RIGHT, fill=Y)
         # 设置 text2 的垂直滚动影响 scroll 滚动条
         text2.configure(yscrollcommand=scroll.set)

@@ -5,20 +5,20 @@ from tkinter import messagebox
 
 
 class App:
-    def __init__(self, master):
-        self.master = master
+    def __init__(self, main):
+        self.main = main
         self.initWidgets()
 
     def initWidgets(self):
         self.strVar = StringVar()
         # 创建 Combobox 组件
-        self.cb = ttk.Combobox(self.master,
+        self.cb = ttk.Combobox(self.main,
                                textvariable=self.strVar,  # 绑定到 self.strVar 变量
                                postcommand=self.choose)  # 当用户单击下拉箭头时触发 self.choose 方法
         self.cb.pack(side=TOP)
         # 为 Combobox 配置多个选项
         self.cb['values'] = ['Python', 'Rubby', 'Kotlin', 'Swift']
-        f = Frame(self.master)
+        f = Frame(self.main)
         f.pack()
         self.isreadonly = IntVar()
         # 创建 Checkbutton，绑定到 self.isreadonly 变量

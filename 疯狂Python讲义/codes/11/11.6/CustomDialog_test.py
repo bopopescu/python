@@ -36,16 +36,16 @@ class MyDialog(Toplevel):
         self.wait_window(self)
 
     # 通过该方法来创建自定义对话框的内容
-    def init_widgets(self, master):
+    def init_widgets(self, main):
         # 创建并添加 Label
-        Label(master, text='用户名', font=12, width=10).grid(row=1, column=0)
+        Label(main, text='用户名', font=12, width=10).grid(row=1, column=0)
         # 创建并添加 Entry，用于接收用户输入的用户名
-        self.name_entry = Entry(master, font=16)
+        self.name_entry = Entry(main, font=16)
         self.name_entry.grid(row=1, column=1)
         # 创建并添加 Label
-        Label(master, text='密  码', font=12, width=10).grid(row=2, column=0)
+        Label(main, text='密  码', font=12, width=10).grid(row=2, column=0)
         # 创建并添加 Entry，用于接收用户输入的用户名
-        self.pass_entry = Entry(master, font=16)
+        self.pass_entry = Entry(main, font=16)
         self.pass_entry.grid(row=2, column=1)
 
     # 通过该方法来创建对话框下方的按钮
@@ -94,24 +94,24 @@ class MyDialog(Toplevel):
 
 
 class App:
-    def __init__(self, master):
-        self.master = master
+    def __init__(self, main):
+        self.main = main
         self.initWidgets()
 
     def initWidgets(self):
         # 创建两个按钮，并为之绑定事件处理方法
-        ttk.Button(self.master, text='模式对话框',
+        ttk.Button(self.main, text='模式对话框',
                    command=self.open_modal
                    ).pack(side=LEFT, ipadx=5, ipady=5, padx=10)
-        ttk.Button(self.master, text='非模式对话框',
+        ttk.Button(self.main, text='非模式对话框',
                    command=self.open_none_modal
                    ).pack(side=LEFT, ipadx=5, ipady=5, padx=10)
 
     def open_modal(self):
-        d = MyDialog(self.master, title='模式对话框')  # 默认是模式对话框
+        d = MyDialog(self.main, title='模式对话框')  # 默认是模式对话框
 
     def open_none_modal(self):
-        d = MyDialog(self.master, title='非模式对话框', modal=False)
+        d = MyDialog(self.main, title='非模式对话框', modal=False)
 
 
 root = Tk()
